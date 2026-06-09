@@ -22,8 +22,7 @@ $PKG install -y ncurses-compat-libs || true
 
 echo "[2/6] Downloading MegaCli..."
 
-wget -O /tmp/MegaCli-8.07.14-1.noarch.rpm 
-https://raw.githubusercontent.com/amarullohripai/Megaraid/main/MegaCli-8.07.14-1.noarch.rpm
+wget -O /tmp/MegaCli-8.07.14-1.noarch.rpm https://raw.githubusercontent.com/amarullohripai/Megaraid/main/MegaCli-8.07.14-1.noarch.rpm
 
 echo "[3/6] Verifying RPM..."
 
