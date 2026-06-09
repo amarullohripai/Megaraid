@@ -16,12 +16,7 @@ fi
 
 echo "[1/6] Installing dependencies..."
 
-$PKG install -y 
-wget 
-unzip 
-smartmontools 
-sg3_utils 
-libncurses* || true
+$PKG install -y wget unzip smartmontools sg3_utils
 
 $PKG install -y ncurses-compat-libs || true
 
@@ -44,17 +39,10 @@ if ! grep -q "MegaCli64" ~/.bashrc; then
 echo 'alias MegaCli64=/opt/MegaRAID/MegaCli/MegaCli64' >> ~/.bashrc
 fi
 
-source ~/.bashrc
-
 echo "[6/6] Displaying RAID Information..."
 
-/opt/MegaRAID/MegaCli/MegaCli64 -PDList -aALL | grep 
--e '^Enclosure Device ID:' 
--e '^Slot Number:' 
--e '^Raw Size:' 
--e '^Firmware state:' 
--e '^Inquiry Data:' 
--e '^PD Type:' || true
+/opt/MegaRAID/MegaCli/MegaCli64 -PDList -aALL | grep -E 
+'^(Enclosure Device ID:|Slot Number:|Raw Size:|Firmware state:|Inquiry Data:|PD Type:)'
 
 echo ""
 echo "================================="
