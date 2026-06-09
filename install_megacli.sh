@@ -40,8 +40,7 @@ fi
 
 echo "[6/6] Displaying RAID Information..."
 
-/opt/MegaRAID/MegaCli/MegaCli64 -PDList -aALL | grep -E 
-'^(Enclosure Device ID:|Slot Number:|Raw Size:|Firmware state:|Inquiry Data:|PD Type:)'
+/opt/MegaRAID/MegaCli/MegaCli64 -PDList -aALL | grep -e '^Enclosure Device ID:' -e '^Slot Number:' -e '^Raw Size:' -e '^Firmware state:' -e 'PD Type:' -e 'Inquiry Data:'
 
 echo ""
 echo "================================="
