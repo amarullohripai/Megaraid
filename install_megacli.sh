@@ -37,6 +37,7 @@ echo "[5/6] Configuring alias..."
 if ! grep -q "MegaCli64" ~/.bashrc; then
 echo 'alias MegaCli64=/opt/MegaRAID/MegaCli/MegaCli64' >> ~/.bashrc
 fi
+source ~/.bashrc
 
 echo "[6/6] Displaying RAID Information..."
 
